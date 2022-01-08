@@ -34,13 +34,14 @@ public class PasswordGenerator {
             System.out.println("Please enter a number");
             System.out.println("Try Again");
         }
-        
     }
+}
+
 class Gui implements ActionListener {
     public JTextfield userText;
 
-
     public Gui() implements ActionListener {
+
     JFrame frame = new JFrame("Password Generator by Julius White V");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     JPanel panel = new JPanel();
@@ -59,12 +60,10 @@ class Gui implements ActionListener {
     panel.add(button);
     frame.setVisible(true);
     }
+
     void actionPreformed(ActionEvent e) {
         PasswordGenerator pg = new PasswordGenerator();
         pg.digit = userText.getText();
         pg.MakePassword();
-
-    }
-
     }
 }
