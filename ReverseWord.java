@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 class ReverseWord {
     static String word;
 
