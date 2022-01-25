@@ -1,29 +1,26 @@
 class FibonacciRecursive {
     private static long[] fibArray;
     public static void main(String[] args) {
-        int x = 50;
+        int x = 70;
 
-        fibArray = new long[x + 1];
+        fibArray = new long[x+1];
+        
+        fibArray[x] = fibonacci(x);
 
-        for (int i = 0; i < x; i++) {
-        fibArray[i] = fibonacci(i);
-        }
-    
-        System.out.println(fibArray[x]);
+        System.out.println(fibonacci(x));
     }
 
     static long fibonacci(int n) {
 
-        if (n == 1) {
-            return 1;
-        }
-        if (n == 0) {
-            return 0;
-        }
+        if (n <= 1) {
+            return n;
+        } 
         if (fibArray[n] != 0){
             return fibArray[n];
         }
-        
-        return fibonnaci(n - 1) + fibonnaci(n - 2);
+        long fibNum = fibonacci(n - 1) + fibonacci(n - 2);
+        fibArray[n] = fibNum;
+
+        return fibNum;
     }
 }
